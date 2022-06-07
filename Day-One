@@ -133,3 +133,83 @@ tcpdump
 -x convert and display ascii, two XX's
 you want to look at the eth header 2 xs
 v for verbose, VV very verbose
+
+
+Berkley Packet Filters (BPF)
+Using BPFs with operators, bitmasking, and TCPDump creates a powerful tool for traffic filtering and parsing.
+
+tcpdump {A} [B:C] {D} {E} {F} {G}
+
+A = Protocol (ether | arp | ip | ip6 | icmp | tcp | udp)
+B = Header Byte offset
+C = optional: Byte Length. Can be 1, 2 or 4 (default 1)
+D = optional: Bitwise mask (&)
+E = Operator (= | == | > | < | <= | >= | != | () | << | >>)
+F = Result of Expresion
+G = optional: Logical Operator (&& ||) to bridge expressions
+Example:
+tcpdump 'ether[12:2] = 0x0800 && (tcp[2:2] != 22 && tcp[2:2] != 23)'
+
+ip[0] & 0x0F > 0x05
+
+
+layer 2 switching technolgoies
+double tag
+
+layer 2 discovery protocols
+
+
+layer 3 routing tables
+routing tables
+routing vs routed
+first hop redundancy protocols
+administrative distance
+stattic/dynamic routing
+
+
+filter for any packaet with a fin flag set
+sudo tcpdump "tcp[13] & 0x01 = 0x01"
+only fin flag and the fin has to be on
+byte offset 13, first bit(flag bit), flag is on(value of 1)
+
+sudo tcpdump "tcp[0:2]
+starting at 0 go two bytes
+
+scapy
+
+>>> a=Ether()
+>>> a.show()
+WARNING: Mac address to reach destination not found. Using broadcast.
+###[ Ethernet ]### 
+  dst       = ff:ff:ff:ff:ff:ff
+  src       = fa:16:3e:6f:0c:1b
+  type      = 0x9000
+
+>>> a.type=0x0806
+>>> a.show()
+WARNING: Mac address to reach destination not found. Using broadcast.
+###[ Ethernet ]### 
+  dst       = ff:ff:ff:ff:ff:ff
+  src       = fa:16:3e:6f:0c:1b
+  type      = ARP
+
+>>> 
+>>> b=ARP()
+>>> b.show()
+###[ ARP ]### 
+  hwtype    = 0x1
+  ptype     = IPv4
+  hwlen     = None
+  plen      = None
+  op        = who-has
+  hwsrc     = fa:16:3e:6f:0c:1b
+  psrc      = 10.10.0.40
+  hwdst     = 00:00:00:00:00:00
+  pdst      = 0.0.0.0
+
+>>> sendp(a/b, iface="eth0")
+.
+Sent 1 packets.
+
+
+
