@@ -1,0 +1,108 @@
+practice CTFC
+
+main CTFD
+
+miro
+
+vpn for after hours
+
+BRMC-004-M
+
+draw IO
+
+resources
+
+terminator
+
+jump box->notification on CTFD
+
+
+
+Bits/nibbles/byte/halfword/word
+
+binary base 2
+decimal base 10
+
+binary conversions
+when you send packets across the wire, you send a 0, its 4 zeros
+2 bit chartacter, 2bits that is the start, the actual message will need to be bit shifted..moving the binary over 
+
+if I had a 1 in binary, and I bit shift to the left what does it become?(2)
+if i bit shift twice what does it become?(4)
+
+encapsualtion and decapsulation
+
+osi model
+
+Layer One
+Physical
+primary hardware, actually sends the data
+
+
+Layer two
+LLC logical link control
+switch interracts with the router
+
+0x is Hex values
+0x0800 is ipv4
+
+VLAN
+virtual local area network, done at layer protocols
+
+arp header
+
+
+OCI layer 3 
+IP
+
+DSCP or ECN
+DSCP value of one, I have to bit shift 
+
+bit 15 
+ecn in thw two fields on the right
+if I have this bit turned on(DSCP value of 1, whihc is a 
+
+how to read offset
+version is byte offset 1
+protocol  (8+1)
+flags(single bit, on or off)
+fragmentation(over the max MTU)
+1480 not 1500 to account for the header
+can we slip a packet in this? yes
+when you get ot the final packet, the MF bit is not on
+
+ipv6
+flow label
+they got rid of fragmentation, there is not a set packet size set with ipv6
+it uses flow instead, with a hop limit
+hope limit is a rename of TTL
+
+fingerprinting
+defauly windows or linux TTL
+how long does a packet take to get around the world (20 ish)
+
+
+ICMP headers/traffic
+ping
+taking advantage of the TTL we can traceroute
+
+
+
+layer 4 transport protocl
+all the secure tools we use, use TCP, soure and destinator port
+TCP flags
+
+
+layer 5 sesion layer
+maintain connections
+
+SMB
+used with sharedrives
+so a linux can talk to windows, SAMBA
+
+RPC sends out resquests and response(depends on the application)
+
+
+
+
+
