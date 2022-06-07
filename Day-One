@@ -16,7 +16,8 @@ terminator
 
 jump box->notification on CTFD
 
-
+ssh student@10.50.27.150 -X
+(in notifications on CTFD)
 
 Bits/nibbles/byte/halfword/word
 
@@ -104,5 +105,31 @@ RPC sends out resquests and response(depends on the application)
 
 
 
+layer 6 presentation layer
+formatting
+file extensions
 
+ftp passive
+it will never reach out to you, it will only respond to queries
 
+ssh
+uses a client server authentication
+whats a server(ssh server has to be running on who you are ssh'ing to )
+what does that look like from a netowrking perspective
+if the service isnt running why would I have it running
+
+when we are tunneling, we are sending out traffic thru another device
+if we change how we connect to the device, it will see your credentials change(flush known keys)
+
+telnet 
+unsecure
+
+wireshark TCP settings relative
+
+!(ssh)
+esporting packets
+
+tcpdump
+-x convert and display ascii, two XX's
+you want to look at the eth header 2 xs
+v for verbose, VV very verbose
