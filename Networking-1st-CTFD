@@ -1,0 +1,92 @@
+Scheme of Maneuver:
+Task 1
+> INTERNET_HOST (T1)
+→ BLUE_HOST-1 (T2)
+→ BLUE_HOST-4 (T3)
+→ BLUE_POP-Router (T4)
+
+Task 2
+> INTERNET_HOST (T1)
+→ BLUE_HOST-1 (T2)
+→ BLUE_HOST-4 (T3)
+
+Task 3
+> INTERNET_HOST (T1)
+--------------------------------------------------------------
+
+Tools/Techniques: Tcpdump, Tshark, Open Source Research (OSR), Wireshark, to Monitor and View your custom packets. Scapy, a packet manipulation program.
+
+Prior Approvals: All connections will be established from your analyst Op Stations. Provide all findings through the associated CTF challenges:
+
+Target Section:
+
+--------------------------------------------------------------
+
+T1
+Hostname: INTERNET_HOST
+External IP: 10.50.XXX.XXX (ALREADY PROVIDED)
+Internal IP: 10.10.0.40 (ALREADY PROVIDED)
+creds: student:password
+Action: Use as a pivot to access T2
+
+T2
+Hostname: BLUE_HOST-1
+IP: 172.16.82.106
+creds: student:password
+Action: Successfully perform a ARP MitM using Scapy
+
+T3
+Hostname: BLUE_HOST-4
+IP: 172.16.82.115
+creds: (none)
+Action: Suspected client recieving sensitive information
+
+T4
+Hostname: BLUE_POP-Router
+IP: 172.16.82.126
+creds: vyos:password
+Action: Gateway of the network
+
+
+
+
+This flag will be released by Mission Command.
+
+Flag Formats for all Basic Analysis Challenges
+
+tcpdump flags:
+
+COMMAND: tcpdump filter syntax
+FLAG: filter syntax
+
+BPFCheck.pcap can be found on your INTERNET_HOST in /home/activity_resources/pcaps
+
+To find the packet count, you can append | wc -l after your command. For example tcpdump "yourfilter" -r BPFCheck.pcap | wc -l
+
+
+BPFCheck.pcap Download Link
+
+>>> a = IPv6()
+>>> a.dst="ff02::1"
+>>> b = ICMPv6ND_RA()
+>>> c = ICMPv6NDOptSrcLLAddr()
+>>> c.lladdr = "fa:16:3e:0f:eb:ff"
+>>> d = ICMPv6NDOptMTU()
+>>> e = ICMPv6NDOptPrefixInfo()
+>>> e.prefixlen= 64
+>>> e.prefix="fd00:deaf:cafe::"
+>>> send(a/b/c/d/e, iface="eth0")
+.
+Sent 1 packets.
+>>> send(a/b/c/d/e, iface="eth0")
+.
+Sent 1 packets.
+>>> 
+
+student@internet-host-student-1:/home/activity_resources/pcaps$ sudo tcpdump -r BPFCheck.pcap "ip[6] & 0x40 = 0x40" | wc -l
+reading from file BPFCheck.pcap, link-type EN10MB (Ethernet)
+1897
+student@internet-host-student-1:/home/activity_resources/pcaps$ sudo tcpdump -r BPFCheck.pcap "ip[6] & 0x40 = 0x40"^C
+student@internet-host-student-1:/home/activity_resources/pcaps$ 
+
+
