@@ -612,8 +612,6 @@ IP: 172.16.140.33
 Action: Perform Active Reconnaissance
 
 
-
-
 T4
 Hostname: red-host-1
 IP: 172.16.182.106
@@ -629,7 +627,7 @@ PORT     STATE    SERVICE
 
 T5
 Hostname: UNKNOWN
-IP: 172.16.182.114
+IP: red-host-3
 Action: Perform Active Reconnaissance
 Nmap scan report for 172.16.182.114
 Host is up (0.0018s latency).
@@ -638,7 +636,7 @@ PORT   STATE SERVICE
 22/tcp open  ssh
 
 T6
-Hostname: UNKNOWN
+Hostname: red-host-4
 IP: 172.16.182.118
 Action: Perform Active Reconnaissance
 Nmap scan report for 172.16.182.118
@@ -646,8 +644,6 @@ Host is up (0.0017s latency).
 Not shown: 999 closed ports
 PORT   STATE SERVICE
 22/tcp open  ssh
-
-
 
 
 Nmap scan report for 172.16.182.126
