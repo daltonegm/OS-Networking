@@ -1,0 +1,7 @@
+nmap
+gid
+curl
+wget
+
+
+ssh student@10.50.27.150 -X
