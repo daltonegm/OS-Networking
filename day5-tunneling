@@ -1,0 +1,42 @@
+kill -9 PID#
+
+netstat ntlp
+
+netcat
+
+
+ssh localhost -p 54321
+
+the 356 key gets stored locally in ssh
+
+once ive proven ssh works I can exit and 
+
+why would I still want to logged in? recon
+
+proxychains note at top
+
+how many dymaic proxy chains can you have 1
+
+ssh localhost -p 54321 -D 9050
+
+proxychains wget -r ftp://localhost
+
+
+ssh student 
+
+scanned a box
+only had port 22
+try to log into telnet
+find username password
+defaults
+sniff the network line
+telnet in
+when got in nettstat
+port 22 was running on the inside
+i can use ssh
+i sshed to my internet host
+for my tools
+used remote port bind to open ssh on my internet host
+pointed locally, passing thru the firewalls
+went thru the tunnel
+-D 9050 proxychains internt host ogo thru the connections
