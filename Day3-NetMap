@@ -1,3 +1,7 @@
+
+ssh 172.16.120.5 to REDIPS
+
+
 Red Boundry Router
 Hostname:
 IP: 172.16.120.1
@@ -211,7 +215,7 @@ RED-SCR
 
 
 
-
+ssh 172.16.120.9 for REDPOP
 INNER BOUNDARY?
 Red IPS
 Hostname:
