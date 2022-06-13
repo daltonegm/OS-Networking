@@ -139,6 +139,7 @@ B. telnet localhost 3333
 Which syntax would properly setup a Remote tunnel from PC3 back to PC2 using PC3 SSH port as the target? 
 C. ssh -R 4444:localhost:22 cctc@192.168.2.1 -NT
 
+20.
 Which syntax would properly setup a Local tunnel to map to the tunnel made in Question 19 using the tunnel made in Question 6 and Question 12? 
 A. ssh cctc@localhost -p 2222 -L 5555:localhost:4444 -NT
 
