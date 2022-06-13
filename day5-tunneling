@@ -87,15 +87,30 @@ C. authenticated to wrong IP in line 2
 
 16.
 An Admin created the following tunnels but found that the Dynamic tunnel would not connect. Where did the Admin make the error? 
-
 1.) ssh cctc@10.50.1.150 -L 1234:192.168.2.1:22 -NT
 2.) ssh -L 4321:100.1.1.2:22 cctc@localhost -p 1234 -NT
 3.) ssh cctc@localhost -p 4321 -D 9050 -NT
 
 A. targeted wrong IP in line 1
-B. targeted wrong IP in line 2
-C. called wrong port in line 2
-D. called wrong port in line 3
+
+17
+ssh -L 1111:localhost:22 cctc@10.50.1.150 -NT
+ssh -L 2222:100.1.1.2:22 cctc@localhost -p 1111 -NT
+Which ssh syntax would properly setup a 3rd Local tunnel to PC3 TELNET port using the tunnels made in Question 6 and Question 12? 
+D. ssh L 3333:192.168.2.2:23 -p 2222 cctc@localhost - -NT
+
+18.
+Which syntax would allow us to telnet to PC3 using the tunnel make in Question 17? 
+B. telnet localhost 3333
+
+19.
+Which syntax would properly setup a Remote tunnel from PC3 back to PC2 using PC3 SSH port as the target? 
+C. ssh -R 4444:localhost:22 cctc@192.168.2.1 -NT
+
+Which syntax would properly setup a Local tunnel to map to the tunnel made in Question 19 using the tunnel made in Question 6 and Question 12? 
+A. ssh cctc@localhost -p 2222 -L 5555:localhost:4444 -NT
+
+
 
 
 
