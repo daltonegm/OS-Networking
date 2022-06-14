@@ -144,6 +144,27 @@ Which syntax would properly setup a Local tunnel to map to the tunnel made in Qu
 A. ssh cctc@localhost -p 2222 -L 5555:localhost:4444 -NT
 
 
+1.
+T3(10.50.29.96) is the authorized initial pivot
+Conduct passive recon on the Target T3, it appears to have access to the 10.3.0.0/24 subnet.
+Create a Local Port Forward from your Internet_Host to T3 targeting:
+ip: 10.3.0.27
+port: `HTTP``
+Identify the flag on Victoria's HTTP Server
+HINT: internet_host$ ssh netX_studentX@{T3_float_ip} -L NssXX:10.3.0.27:80 -NT
+**ANSWER***
+ssh net3_student1@10.50.29.96 -L 30101:10.3.0.27:80
+*then on internet host firefox**
+localhost:30101
+
+
+2.
+Create a Dynamic Port Forward from Internet_Host to T3 then use proxychains to pull the flag.
+Target ip: 10.3.0.1
+Identify the flag on Cortina's FTP Server
+HINT: internet_host$ ssh netX_studentX@{T3_float_ip} -D 9050 -NT
+
+
 
 
 
