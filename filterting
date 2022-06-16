@@ -1,0 +1,56 @@
+windows or linux host based filtering
+
+netfliter framework
+
+packet filtering
+stateless firewalls
+stateful firewalls
+network address and port translation
+other packet manipulation
+
+
+netfliter hooks
+pre routing
+local in
+forward
+local out
+post routing
+
+netfliter paradigm
+tables
+chians
+rules
+
+
+configuring iptables
+
+iptables
+ip6tables
+ebtables
+arptables
+
+
+filter
+nat
+mangle
+raw
+security
+
+
+flushing iptables
+iptables -t [table] -F
+
+change default policy
+iptables -t [table] -P [chain] [action]
+
+list rules with rule numbers
+iptables -t [table] -L --line-numbers
+
+
+
+
+list ip tables rules on your internet host
+
+
+sudo iptables -P INPUT DROP
+sudo iptables -P OUTPUT DROP
