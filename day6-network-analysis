@@ -1,0 +1,7 @@
+p0f
+
+Looks at variations in initial TTL, fragmentation flag, default IP header packet length, window size, and TCP options
+
+Configuration stored in:
+
+ /etc/p0f/p0f.fp
